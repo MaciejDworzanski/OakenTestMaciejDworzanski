@@ -90,5 +90,6 @@ public class Deck : MonoBehaviour
         deck.RemoveAt(cardID);
         foreach (CardDisplay card in deck)
             if (card.cardID >= cardID) card.cardID--;
+        Global.Instance.mouseIsOverCard = false;
     }
 }
