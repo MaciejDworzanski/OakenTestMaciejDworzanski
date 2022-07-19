@@ -13,6 +13,7 @@ public class CardDisplay : MonoBehaviour
     public GameObject upgradeNotPossible;
     public GameObject upgradeCostGraphic;
     public GameObject destroyProfitGraphic;
+    public GameObject lightObject;
     [HideInInspector]
     public Deck deck;
     [HideInInspector]
@@ -76,10 +77,8 @@ public class CardDisplay : MonoBehaviour
 
     public void Destroy()
     {
-        Debug.Log("TryDestroy");
         if (Global.Instance.destroyTime)
         {
-            Debug.Log("Destroy");
             Global.Instance.destroyTime = false;
             Global.Instance.lumi += card.destroyProfit;
             Global.Instance.ResetUI();
@@ -96,14 +95,23 @@ public class CardDisplay : MonoBehaviour
     public void MouseEnter()
     {
         Global.Instance.mouseIsOverCard = true;
-        if (Global.Instance.upgradeTime && upgradePossible) upgradeCostGraphic.SetActive(true);
+        if(!Global.Instance.upgradeTime) lightObject.SetActive(true);
+
+        if (Global.Instance.upgradeTime && upgradePossible)
+        {
+            upgradeCostGraphic.SetActive(true);
+            lightObject.SetActive(true);
+        }
         else if (Global.Instance.destroyTime) destroyProfitGraphic.SetActive(true);
     }
 
     public void MouseExit()
     {
         Global.Instance.mouseIsOverCard = false;
-        if (Global.Instance.upgradeTime && upgradePossible) upgradeCostGraphic.SetActive(false);
-        else if (Global.Instance.destroyTime) destroyProfitGraphic.SetActive(false);
+        lightObject.SetActive(false);
+        upgradeCostGraphic.SetActive(false);
+        destroyProfitGraphic.SetActive(false);
+        //if (Global.Instance.upgradeTime && upgradePossible) upgradeCostGraphic.SetActive(false);
+        //else if (Global.Instance.destroyTime) destroyProfitGraphic.SetActive(false);
     }
 }
