@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c94687ae6b8d4844926e147afaa46fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDisplayPrefab: {fileID: 0}
+  cardDisplayPrefab: {fileID: 4837095459719821968, guid: d53899ae03a4c2b42aa06f9c8cd409f9, type: 3}
   deckCards:
   - {fileID: 11400000, guid: 4a3cab40e8b82b946aa8e5c2c3c653b3, type: 2}
   - {fileID: 11400000, guid: 4a3cab40e8b82b946aa8e5c2c3c653b3, type: 2}

@@ -30,7 +30,7 @@ public class Global : MonoBehaviour
 
     public void ResetUI()
     {
-        ui.endAction();
+        if(ui != null) ui.endAction();
     }
 
 }
