@@ -11,6 +11,4 @@ public class Card : ScriptableObject
     public int upgradeCost;
     public int destroyProfit;
     public Color color;
-    //[HideInInspector]
-    //public int cardIndex;
 }
